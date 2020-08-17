@@ -34,15 +34,7 @@ pipeline {
                 script {
                  sh """#!/bin/bash -xe
                     echo "running build stage"
-                    #mkdir temp
-                    #cd temp
-                    #python3 -m venv ami_cleanup_job
-                    #source ami_cleanup_job/bin/activate
-                    #pip install  --no-cache-dir --default-timeout=100 -U pip
-                    #pip3 install --no-cache-dir --default-timeout=100 -r ../requirements.txt
-                    #cp -r ami_cleanup_job/lib/python3.6/site-packages/* .
-                    #deactivate                    
-                    #cd ..
+                    echo "${myList}"
                  """ 
                 }
             }
