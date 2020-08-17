@@ -6,6 +6,8 @@ def myVar() {
            println "Exiting the script no lambda function has been updated"
            currentBuild.result = 'SUCCESS'
            String[] result_list = result_str.split()
+           println "Printing list"
+           println result_list
        return result_list
 }
 
