@@ -37,7 +37,8 @@ pipeline {
                              else {
                                    println myList
                                    println "Exiting the build even the condition failed"
-                                   currentBuild.result = 'SUCCESS'
+                                   //currentBuild.result = 'SUCCESS'
+                                   currentBuild.result = 'ABORTED'
                                    println "${currentBuild.currentResult}"
                              
                              }
