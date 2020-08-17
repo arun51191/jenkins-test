@@ -30,7 +30,8 @@ pipeline {
                              if(!myList?.trim()) {
                                    println "Exiting the build as no lambda function is updated"
                                    println myList
-                                   currentBuild.result = 'SUCCESS'
+                                   //currentBuild.result = 'SUCCESS'
+                                   currentBuild.result = 'ABORTED'
                                    println "${currentBuild.currentResult}" 
                              } 
                              else {
