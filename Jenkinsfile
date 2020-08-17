@@ -1,13 +1,15 @@
 def myVar() {
-       println "Executing shell script"
+       String[] result_list
        def result_str = sh(script: './script.sh', returnStdout: true).trim()
        println "Testing the shell script ouput"
-       if(!result_str?.trim())
+       if(!result_str?.trim()) {
            println "Exiting the script no lambda function has been updated"
            currentBuild.result = 'SUCCESS'
-           String[] result_list = result_str.split()
-           println "Printing list"
-           println result_list
+           result_list = []
+       }
+       else {
+           result_list = result_str.split()
+       }              
        return result_list
 }
 
