@@ -22,6 +22,15 @@ pipeline {
     }
 
     stages {
+        stage("Validate") {
+               script {
+                      if(myList.isEmpty()){
+                            println "Exiting the build as no lambda function is updated"
+                            currentBuild.result = 'SUCCESS'                      
+                      }               
+               }         
+        }   
+           
         stage("Build") {
 
             agent {
