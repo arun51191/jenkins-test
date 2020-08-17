@@ -4,7 +4,7 @@ def myVar() {
        if(!result_str?.trim()) {
            println "Exiting the script no lambda function has been updated"
            currentBuild.result = 'SUCCESS'
-           result_list = []
+           result_list = null
        }
        else {
            println "In else condtion"
@@ -31,7 +31,7 @@ pipeline {
                steps {
                       script {
                              
-                             if(myList == []){
+                             if(myList == null) {
                                    println "Exiting the build as no lambda function is updated"
                                    currentBuild.result = 'SUCCESS'                      
                              }               
