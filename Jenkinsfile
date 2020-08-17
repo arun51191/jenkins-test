@@ -30,8 +30,8 @@ pipeline {
         stage("Validate") {
                steps {
                       script {
-                             println (myList.isEmpty())
-                             if(myList.isEmpty()){
+                             
+                             if(myList == []){
                                    println "Exiting the build as no lambda function is updated"
                                    currentBuild.result = 'SUCCESS'                      
                              }               
