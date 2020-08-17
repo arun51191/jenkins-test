@@ -27,7 +27,7 @@ pipeline {
         stage("Validate") {
                steps {
                       script {                             
-                             if(!myList?.trim()) {
+                             if($myList == []) {
                                    println "Exiting the build as no lambda function is updated"
                                    println myList
                                    //currentBuild.result = 'SUCCESS'
