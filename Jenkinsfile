@@ -1,5 +1,4 @@
 def myVar() {
-       String[] result_list
        def result_str = sh(script: './script.sh', returnStdout: true).trim()
        println "Testing the shell script ouput"
        if(!result_str?.trim()) {
