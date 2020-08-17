@@ -33,7 +33,8 @@ pipeline {
                              
                              if(myList == null) {
                                    println "Exiting the build as no lambda function is updated"
-                                   currentBuild.result = 'SUCCESS'                      
+                                   currentBuild.result = 'SUCCESS'
+                                   println "${currentBuild.currentResult}"
                              }               
                       }
                }
