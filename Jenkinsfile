@@ -8,6 +8,7 @@ def myVar() {
            result_list = []
        }
        else {
+           println "In else condtion"
            result_list = result_str.split()
        }
        println result_list
