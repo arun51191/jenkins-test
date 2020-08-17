@@ -1,9 +1,6 @@
 def myVar() {
        def result_str = sh(script: './script.sh', returnStdout: true).trim()
-       println "Testing the shell script ouput"
        if(!result_str?.trim()) {
-           println "Exiting the script no lambda function has been updated"
-           currentBuild.result = 'SUCCESS'
            result_list = null
        }
        else {
@@ -29,13 +26,11 @@ pipeline {
     stages {
         stage("Validate") {
                steps {
-                      script {
-                             
-                             if(myList == null) {
-                                   println "Exiting the build as no lambda function is updated"
-                                   currentBuild.result = 'SUCCESS'
-                                   println "${currentBuild.currentResult}"
-                             }               
+                      script {                             
+                         if(!myList) 
+                               println "Exiting the build as no lambda function is updated"
+                               currentBuild.result = 'SUCCESS'
+                               println "${currentBuild.currentResult}"                                         
                       }
                }
         }   
