@@ -9,7 +9,8 @@ def myVar() {
        }
        else {
            result_list = result_str.split()
-       }              
+       }
+       println result_list
        return result_list
 }
 
